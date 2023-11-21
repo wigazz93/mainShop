@@ -1,13 +1,260 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Krub&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Krub", sans-serif;
+}
+
+.wrapper {
+  width: 1280px;
+  margin: 50px auto 0;
+  position: relative;
+}
+header {
+  position: relative;
+}
+
+.shop-cart-btn {
+  margin-right: 22px;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.shop-cart-btn:hover {
+  scale: 1.1;
+  color: #b31d1d;
+  cursor: pointer;
+}
+
+.active {
+  color: #b31d1d;
+}
+
+header .shop-cart {
+  right: 0;
+  z-index: 10000;
+  position: absolute;
+  width: 350px;
+  background-color: rgba(215, 217, 178, 0.7);
+
+  box-shadow: 0px 0px 46px 2px rgba(0, 0, 0, 0.52);
+}
+header .shop-cart .empty h2 {
+  font-size: 20px;
+  padding: 10px;
+}
+
+header .shop-cart .item {
+  padding: 20px 0 0 10px;
+}
+header .shop-cart .item img {
+  height: 100px;
+}
+
+header .shop-cart .item b {
+  color: rgb(5, 50, 5);
+  padding-top: 5px;
+}
+
+header .shop-cart .item .del-icon {
+  cursor: pointer;
+  margin-left: 50px;
+}
+header .shop-cart .item .del-icon:hover {
+  color: #b31d1d;
+}
+
+header .summa {
+  font-weight: 800;
+  width: 100%;
+  padding: 15px 0 10px 10px;
+}
+
+header .logo {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+header ul.nav {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header ul.nav li {
+  margin-right: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header ul.nav li:hover {
+  opacity: 0.5;
+}
+
+header .presentation {
+  margin: 30px 0;
+
+  width: 100%;
+  height: 500px;
+  background: url(https://geometrium.com/wp-content/uploads/2019/03/viza_udevelopment_vulgarnye-1.jpg)
+    no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+header .presentation::after {
+  content: "Товары для вашего дома";
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  font-size: 40px;
+  color: rgb(242, 244, 246);
+  width: 300px;
+  font-weight: 800;
+  text-shadow: 3px 3px 10px #000;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header .presentation::before {
+  content: "По приятным ценам";
+  position: absolute;
+  top: 160px;
+  left: 20px;
+  font-size: 16px;
+  color: rgb(242, 244, 246);
+  width: 300px;
+  font-weight: 300;
+  text-shadow: 3px 3px 10px #000;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.cat div {
+  margin-top: 50px;
+  display: inline-block;
+  background: #afaeae;
+  border-radius: 50px;
+  margin-right: 15px;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.3s;
+}
+.cat div:hover {
+  scale: 1.05;
+  border-color: silver;
+  background-color: transparent;
+}
+
+main {
+  margin-top: 40px;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.full-item {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #54484890;
+  z-index: 9999;
+  overflow: auto;
+}
+.full-item > div {
+  width: 600px;
+  position: relative;
+  margin: 10% auto;
+  padding: 40px 30px;
+  background: #faf9f9;
+  border-radius: 9px;
+}
+
+main .item {
+  position: relative;
+  background-color: rgba(21, 44, 18, 0.083);
+  overflow: hidden;
+  margin-bottom: 30px;
+  position: relative;
+  width: 30%;
+}
+
+main .item img,
+.full-item img {
+  cursor: pointer;
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  transition: 0.3s;
+}
+
+main .item img:hover,
+.full-item img:hover {
+  scale: 1.05;
+}
+
+main h2,
+.full-item h2,
+main b,
+.full-item b,
+main p,
+.full-item p {
+  margin: 10px 20px;
+  color: #423434;
+}
+
+main b,
+.full-item b {
+  color: green;
+}
+
+main .add-to-cart,
+.full-item .add-to-cart {
+  position: absolute;
+  bottom: 5px;
+  right: 25px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  border: 1px solid #000;
+  background: #b31d1d;
+  color: aliceblue;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+main .add-to-cart,
+.full-item .add-to-cart:hover {
+  scale: 1.1;
+  font-weight: bolder;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(233, 241, 246);
+  height: 50px;
+  text-align: center;
+  margin-top: 100px;
+  background-color: #afaeae;
+  /*position: absolute;
+  bottom: 0;*/
 }
